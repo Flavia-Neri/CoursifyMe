@@ -1,0 +1,299 @@
+@font-face{
+    font-family:"SFUITextRegular";
+    src: url("Fonts/SFUIText-Regular.ttf");
+}
+@font-face{
+    font-family:"SFUITextLight";
+    src: url("Fonts/SFUIText-Light.ttf");
+}
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family:"SFUITextRegular";
+}
+body{
+    display:flex;
+    background-color:#FAFAFA;
+}
+.content{
+    width:544px;
+    height:688px;
+    background-color:#fff;
+    margin:40px 94px 0 40px;
+    box-shadow:0 0 10px rgba(51,51,51,0.12);
+    border-radius:30px;
+    padding:30px;
+}
+header{
+    width:100%;
+}
+header .logo img{
+    width:189px;
+    height:50px;
+}
+.titleText {
+    width:484px;
+    height:116px;
+    text-align:left;
+    color:#333333;
+    margin:25px 0 0 0;
+}
+.titleText p{
+    font-size:22px;
+}
+.titleText :nth-child(2){
+    font-weight: bold;
+    color:#1ABC9C;
+}
+.titleText span{
+    display:block;
+    margin-top:20px;
+    font-size:16px;
+    line-height: 25px;
+}
+.form{
+    width:544px;
+    margin:40px 0 0 0;
+}
+form{
+    animation:animationForm 0.8s ease;
+}
+.register, .login{
+    opacity: 1;
+    visibility: visible;
+}
+.login{
+    display:none;
+}
+.nav{
+    width:484px;
+    position:relative;
+}
+button{
+    outline:none;
+}
+.nav button{
+    height:26px;
+    font-family: "SFUITextLight";
+    font-weight:300;
+    font-size: 22px;
+    color:#C4C4C4;
+    border:none;
+    margin:5px 0 25px 0;
+    background-color:#fff;
+}
+.nav::after {
+    content: '';
+    width: 40px;
+    height: 4px;
+    border-radius:100px;
+    background: #1ABC9C;
+    position: absolute;
+    left: 0;
+    top: 60%;
+}
+ .nav::after{
+    width:105px;
+    transition:all 0.8s ease;
+}
+.active .nav::after{
+    width:60px;
+}
+.nav div{
+    height:56px;
+    position:relative;
+}
+.nav div button:first-child{
+    font-family: "SFUITextRegular";
+    font-weight: 700;
+    color:#000000;
+    position:absolute;
+    left: 0;
+    transition: all 0.8s ease;
+}
+.nav div button:last-child{
+    position:absolute;
+    left:100%;
+    transition: all 0.8s ease;
+    transform:translateX(-100%);
+}
+.active .nav div button:first-child{
+    font-family: "SFUITextLight";
+    font-weight: 300;
+    color:#C4C4C4;
+    left:100%;
+    transform:translateX(-100%);
+}
+.active .nav div button:last-child{
+    font-family: "SFUITextRegular";
+    font-weight: 700;
+    color:#000000;
+    left:0;
+    transform:translateX(0);
+}
+ .active .login{
+    display:block;
+}
+ .active .register{
+    display:none;
+}
+input,select{
+    width:484px;
+    height: 35px;
+    border-radius:8px;
+    background-color:#fff;
+    box-shadow:0px 0px 6px rgba(51,51,51,0.059);
+    border:0.2px solid #C4C4C4;
+    margin-bottom:12px;
+}
+input[type="tel"]{
+    width:382px;
+}
+::placeholder,select{
+    color:#51627F;
+    font-size:16px;
+    padding-left:15px;
+}
+select{
+    width:97px;
+    height:35px;
+    appearance: none;
+    background-image:url("Images/arrow.png");
+    background-repeat: no-repeat;
+    background-position:center right 10px;
+    background-size: 15px 15px;
+}
+form button{
+    width:160px;
+    height:40px;
+    color:#fff;
+    font-size:18px;
+    font-weight: bold;
+    margin:25px 162px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(51,51,51,0.15);
+    border:none;
+    background-color:#1ABC9C;
+}
+.login form span{
+    font-size:16px;
+    color:#000000;
+    line-height: 19px;
+    cursor:pointer;
+}
+.login form button{
+    margin-bottom:101px;
+}
+#slider{
+    margin-top:146px;
+}
+.tns-outer [aria-controls], .tns-outer [data-action]{
+    display:none;
+}
+.tns-nav{
+    display:flex !important;
+    justify-content: center;
+}
+ .tns-nav button{
+    display:block !important;
+    width:15px;
+    height:15px;
+    border:none;
+    border-radius:100%;
+    margin:12px 0 0 4px;
+    background-color:#A8B4B1;
+    position:relative;
+}
+.tns-nav button::after{
+    content:"";
+    position:absolute;
+    width:15px;
+    height:15px;
+    background-color:#1ABC9C;
+    border-radius:100%;
+    left:calc(50% - 7.5px);
+    top:calc(50% - 7.5px);
+    transition:all 0.5s ease;
+    transform:scale(0);
+}
+.tns-nav button.tns-nav-active::after{
+    transform:scale(1);
+}
+.transitionIn{
+    animation-name:transitionIn;
+    -webkit-animation-name:transitionIn;
+}
+.transitionOut{
+    animation-name:transitionOut;
+    -webkit-animation-name:transitionOut;
+}
+.tns-outer{
+    width:625px;
+    height:477px;
+}
+.tns-item:not(.tns-slide-active){
+    opacity:0;
+}
+.tns-item:nth-of-type(odd).tns-slide-active{
+    animation: transitionIn 0.8s ease;
+}
+.tns-item:nth-of-type(even).tns-slide-active{
+    animation: transitionIn 0.8s ease;
+    animation:transitionInSec 0.8s ease;
+}
+ .tns-item img {
+    width:100%;
+    height:100%;  
+}
+footer{
+    text-align:center;
+    margin-top:45px;
+}
+footer p{
+    font-size:14px;
+    font-family: "SFUITextLight";
+}
+  @keyframes slide{
+    to{
+      transform: rotate3d(0, 1, 0, 0deg);
+    }
+  }
+@keyframes animationRegister{
+    to{
+        width:105px;
+    }
+}
+@keyframes animationLogin{
+    to{
+        width:60px;
+    }
+}
+@keyframes transitionIn{
+    from{
+        transform:translate(-50px, -50px);
+        opacity:0;
+    }
+    to{
+        transform:translate(0,0);
+        opacity:1;
+    }
+}
+@keyframes transitionInSec{
+    from{
+        transform:translate(50px, 50px);
+        opacity:0;
+    }
+    to{
+        transform:translate(0,0);
+        opacity:1;
+    }
+}
+@keyframes animationForm{
+    from{
+        transform:translateY(50px);
+        opacity:0;
+    }
+}
+
+
